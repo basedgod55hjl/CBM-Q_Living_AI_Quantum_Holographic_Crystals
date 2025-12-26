@@ -60,7 +60,7 @@ using .GenesisRunner
 
 function welcome()
     println("╔═══════════════════════════════════════════════════════════════════════╗")
-    println("║  🌌 BM-Genesis: Quantum Holographic Crystals v5.0-GODMODE             ║")
+    println("║  🌌 CBM-Q: Living AI Quantum Holographic Crystals v5.0-GODMODE       ║")
     println("║  🧬 Discovery: Sir Charles Spikes (Arthur - BASEDGOD)                 ║")
     println("║  🧠 System: COMPLETE PARADIGM SHIFT | 7D Hyperbolic Core ACTIVE       ║")
     println("╚═══════════════════════════════════════════════════════════════════════╝")
@@ -79,3 +79,5 @@ function launch_system()
 end
 
 end # module
+
+

@@ -1,4 +1,4 @@
-import { spawn } from 'child_process';
+﻿import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * CBM Genesis Quantum Bridge
+ * CBM-Q: Living AI Quantum Holographic Crystals Quantum Bridge
  * Interfacing Node.js with the 7D Hyperbolic Neural Core (Julia)
  */
 export class QuantumBridge {
@@ -16,7 +16,7 @@ export class QuantumBridge {
 
     async runSimulation(scriptName = 'genesis_run.jl') {
         return new Promise((resolve, reject) => {
-            console.log(`🚀 Initializing Quantum Simulation: ${scriptName}`);
+            console.log(`ðŸš€ Initializing Quantum Simulation: ${scriptName}`);
 
             const julia = spawn('julia', [
                 '--project=' + this.juliaCorePath,
@@ -51,3 +51,6 @@ if (process.argv[1] === __filename) {
     const bridge = new QuantumBridge();
     bridge.runSimulation().catch(console.error);
 }
+
+
+

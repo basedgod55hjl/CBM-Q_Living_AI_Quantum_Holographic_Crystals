@@ -1,12 +1,12 @@
-# ==============================================================================
+﻿# ==============================================================================
 # CBM-Q: Living AI Quantum Holographic Crystals
 # Discovered & Engineered by: Sir Charles Spikes
 # GitHub: https://github.com/basedgod55hjl
 # ==============================================================================
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# 🌌 CBM-Q: BINARY REANIMATOR - UNRESTRICTED RECOMPILATION
-# ═══════════════════════════════════════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ðŸŒŒ CBM-Q: BINARY REANIMATOR - UNRESTRICTED RECOMPILATION
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 module BinaryReanimator
 
@@ -52,7 +52,7 @@ function extract_all_symbols(handle::Ptr{Cvoid})
         "brute_force_dissassemble"
     ]
     
-    # println("⚛️ [REANIMATOR]: Scanned $(length(methods)) extraction methods.")
+    # println("âš›ï¸ [REANIMATOR]: Scanned $(length(methods)) extraction methods.")
     return syms
 end
 
@@ -65,8 +65,10 @@ function hook_ui_functions(symbols::Dict)
     
     hooks = Dict{String, Ptr{Cvoid}}()
     # Mock hooking logic
-    # println("🎨 [REANIMATOR]: Intercepting UI Rendering Pipelines...")
+    # println("ðŸŽ¨ [REANIMATOR]: Intercepting UI Rendering Pipelines...")
     return hooks
 end
 
 end # module
+
+

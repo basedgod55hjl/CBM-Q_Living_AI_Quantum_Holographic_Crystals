@@ -343,7 +343,7 @@ function Base.show(io::IO, core::HyperbolicGPUCore)
     state_norm = norm(core.phase_state)
     
     println(io, "â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•")
-    println(io, "ðŸŒŒ CBM GENESIS: HYPERBOLIC GPU CORE")
+    println(io, "ðŸŒŒ CBM-Q: Living AI Quantum Holographic Crystals: HYPERBOLIC GPU CORE")
     println(io, "â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•")
     println(io, "ðŸ“ Geometry:")
     println(io, "   Dimension: $(HYPERBOLIC_DIM)D (Hâ·)")
@@ -410,3 +410,6 @@ function demo()
 end
 
 end # module HyperbolicCore
+
+
+

@@ -1,12 +1,12 @@
-# ==============================================================================
+﻿# ==============================================================================
 # CBM-Q: Living AI Quantum Holographic Crystals
 # Discovered & Engineered by: Sir Charles Spikes
 # GitHub: https://github.com/basedgod55hjl
 # ==============================================================================
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# 🌌 CBM Studio: Binary Compilation System
-# ═══════════════════════════════════════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ðŸŒŒ CBM Studio: Binary Compilation System
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # Compiles the full CBM Studio IDE into a native .exe using PackageCompiler.jl
 #
 # Usage:
@@ -14,7 +14,7 @@
 #   compile_cbm_studio()
 #
 # Creator: Sir Charles Spikes (BASEDGOD)
-# ═══════════════════════════════════════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 module CBMCompiler
 
@@ -50,14 +50,14 @@ function check_dependencies()
     end
     
     if !isempty(missing_pkgs)
-        println("⚠️ Missing packages: $(join(missing_pkgs, ", "))")
+        println("âš ï¸ Missing packages: $(join(missing_pkgs, ", "))")
         println("   Installing...")
         for pkg in missing_pkgs
             Pkg.add(pkg)
         end
     end
     
-    println("✅ All dependencies ready for compilation")
+    println("âœ… All dependencies ready for compilation")
     return true
 end
 
@@ -73,7 +73,7 @@ function create_sysimage(; output_name::String="cbm_studio")
     
     sysimage_path = joinpath(OUTPUT_DIR, output_name * "_sysimage.dll")
     
-    println("🔧 Creating CBM Studio System Image...")
+    println("ðŸ”§ Creating CBM Studio System Image...")
     println("   Output: $sysimage_path")
     
     # Precompile statements
@@ -91,7 +91,7 @@ function create_sysimage(; output_name::String="cbm_studio")
         zeros(7, 7)
         tanh.(randn(100))
         
-        # Möbius addition (core operation)
+        # MÃ¶bius addition (core operation)
         function mobius_add(u, v, c=-1.0)
             u_sq = dot(u, u)
             v_sq = dot(v, v)
@@ -115,10 +115,10 @@ function create_sysimage(; output_name::String="cbm_studio")
             sysimage_path = sysimage_path,
             precompile_execution_file = precompile_file
         )
-        println("✅ System image created: $sysimage_path")
+        println("âœ… System image created: $sysimage_path")
         return sysimage_path
     catch e
-        println("❌ Sysimage creation failed: $e")
+        println("âŒ Sysimage creation failed: $e")
         return nothing
     end
 end
@@ -140,10 +140,10 @@ function compile_cbm_studio(; app_name::String="CBMStudio")
         #!/usr/bin/env julia
         # CBM Studio - Main Entry Point
         
-        println("╔════════════════════════════════════════════════════════════════╗")
-        println("║  🌌 CBM Studio v$CBM_VERSION                                        ║")
-        println("║  Living AI Quantum Holographic Crystals                        ║")
-        println("╚════════════════════════════════════════════════════════════════╝")
+        println("â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—")
+        println("â•‘  ðŸŒŒ CBM Studio v$CBM_VERSION                                        â•‘")
+        println("â•‘  Living AI Quantum Holographic Crystals                        â•‘")
+        println("â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•")
         println()
         
         using LinearAlgebra
@@ -155,7 +155,7 @@ function compile_cbm_studio(; app_name::String="CBMStudio")
         using .CBM
         
         # Launch IDE
-        println("🚀 Launching CBM Studio IDE...")
+        println("ðŸš€ Launching CBM Studio IDE...")
         CBM.welcome()
         
         # Keep running
@@ -168,12 +168,12 @@ function compile_cbm_studio(; app_name::String="CBMStudio")
     
     exe_path = joinpath(OUTPUT_DIR, app_name)
     
-    println("╔════════════════════════════════════════════════════════════════╗")
-    println("║  🔧 Compiling CBM Studio to Native Executable                  ║")
-    println("╚════════════════════════════════════════════════════════════════╝")
+    println("â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—")
+    println("â•‘  ðŸ”§ Compiling CBM Studio to Native Executable                  â•‘")
+    println("â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•")
     println()
-    println("📂 Project: $CBM_PROJECT_PATH")
-    println("📦 Output: $exe_path")
+    println("ðŸ“‚ Project: $CBM_PROJECT_PATH")
+    println("ðŸ“¦ Output: $exe_path")
     println()
     
     try
@@ -187,14 +187,14 @@ function compile_cbm_studio(; app_name::String="CBMStudio")
         )
         
         println()
-        println("✅ Compilation Complete!")
+        println("âœ… Compilation Complete!")
         println("   Executable: $(exe_path)\\CBMStudio.exe")
         
         return "$exe_path\\CBMStudio.exe"
     catch e
-        println("❌ Compilation failed: $e")
+        println("âŒ Compilation failed: $e")
         println()
-        println("💡 Hint: Ensure PackageCompiler is installed:")
+        println("ðŸ’¡ Hint: Ensure PackageCompiler is installed:")
         println("   Pkg.add(\"PackageCompiler\")")
         return nothing
     end
@@ -228,7 +228,7 @@ pause
 """)
     end
     
-    println("✅ Quick launcher created: $launcher_path")
+    println("âœ… Quick launcher created: $launcher_path")
     println("   Double-click to run CBM Studio!")
     
     return launcher_path
@@ -240,27 +240,27 @@ end
 Complete build process: check deps, create sysimage, compile app.
 """
 function build_all()
-    println("🌌 CBM Studio Build System")
+    println("ðŸŒŒ CBM Studio Build System")
     println("=" ^ 60)
     
     # Step 1: Check dependencies
-    println("\n📋 Step 1: Checking Dependencies...")
+    println("\nðŸ“‹ Step 1: Checking Dependencies...")
     check_dependencies()
     
     # Step 2: Create sysimage
-    println("\n📦 Step 2: Creating System Image...")
+    println("\nðŸ“¦ Step 2: Creating System Image...")
     sysimage = create_sysimage()
     
     # Step 3: Compile app
-    println("\n🔧 Step 3: Compiling Application...")
+    println("\nðŸ”§ Step 3: Compiling Application...")
     exe = compile_cbm_studio()
     
     # Step 4: Create quick launcher as backup
-    println("\n🚀 Step 4: Creating Quick Launcher...")
+    println("\nðŸš€ Step 4: Creating Quick Launcher...")
     launcher = quick_build()
     
     println("\n" * "=" ^ 60)
-    println("✅ BUILD COMPLETE!")
+    println("âœ… BUILD COMPLETE!")
     println("=" ^ 60)
     
     if exe !== nothing
@@ -272,3 +272,5 @@ function build_all()
 end
 
 end # module CBMCompiler
+
+

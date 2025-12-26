@@ -74,3 +74,5 @@ println("\nðŸš€ Next Steps:")
 println("   1. Run: python $(script_path)")
 println("   2. Convert: Run the generated convert_to_gguf.bat")
 println("   3. Load in LM Studio and connect to CBM-Q!")
+
+

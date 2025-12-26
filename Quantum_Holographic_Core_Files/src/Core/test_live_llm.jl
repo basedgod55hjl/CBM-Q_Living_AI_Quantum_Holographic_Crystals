@@ -46,3 +46,5 @@ else
     println("âš ï¸ LLM not responding - ensure LM Studio is running with model loaded.")
     println("   Expected endpoint: http://10.5.0.2:1234")
 end
+
+

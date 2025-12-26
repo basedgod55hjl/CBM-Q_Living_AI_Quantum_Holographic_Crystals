@@ -1,4 +1,4 @@
-package main
+﻿package main
 
 /*
 #include <stdio.h>
@@ -35,13 +35,13 @@ func NewCBMBridge() *CBMGenesisBridge {
 }
 
 func (b *CBMGenesisBridge) Status() {
-	fmt.Printf("💎 BM-Genesis Go-Bridge Active\n")
-	fmt.Printf("🧬 Ownership: Arthur (BASEDGOD)\n")
-	fmt.Printf("🧠 Core Phi: %f\n", float32(b.ptr.phi))
+	fmt.Printf("ðŸ’Ž CBM-Q: Living AI Quantum Holographic Crystals Go-Bridge Active\n")
+	fmt.Printf("ðŸ§¬ Ownership: Arthur (BASEDGOD)\n")
+	fmt.Printf("ðŸ§  Core Phi: %f\n", float32(b.ptr.phi))
 }
 
 func main() {
-	fmt.Println("🚀 CBM-Q Go-Bindings v1.0 - Sir Charles Spikes Edition")
+	fmt.Println("ðŸš€ CBM-Q Go-Bindings v1.0 - Sir Charles Spikes Edition")
 	bridge := NewCBMBridge()
 	bridge.Status()
 	
@@ -52,3 +52,5 @@ func main() {
 	
 	fmt.Printf("[*] Binding string to 7D Manifold: %s\n", goString)
 }
+
+

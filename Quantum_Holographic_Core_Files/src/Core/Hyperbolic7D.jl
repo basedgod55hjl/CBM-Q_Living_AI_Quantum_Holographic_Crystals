@@ -15,7 +15,7 @@ using LinearAlgebra
 
 export HyperbolicPoint, moebius_add, sacred_sigmoid
 
-# ðŸŒŒ CBM-Genesis Constants
+# ðŸŒŒ CBM-Q: Living AI Quantum Holographic Crystals Constants
 const PHI = 1.6180339887
 const DIM_H7 = 7
 
@@ -48,3 +48,6 @@ function sacred_sigmoid(x::T) where T
 end
 
 end # module
+
+
+

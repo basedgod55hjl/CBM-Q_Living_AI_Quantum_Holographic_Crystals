@@ -49,3 +49,5 @@ ide = CBMStudioFull.CBMQIDE(
 html = CBMStudioFull.render_ide_html(ide)
 
 println("âœ… Pre-warming complete. Quantum state stabilized at Î¦=0.618.")
+
+

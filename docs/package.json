@@ -1,7 +1,7 @@
-{
-    "name": "cbm-genesis-quantum-holographic-crystals",
+﻿{
+    "name": "CBM-Q: Living AI Quantum Holographic Crystals-quantum-holographic-crystals",
     "version": "1.0.0",
-    "description": "BM-Genesis: Quantum Holographic Crystals — 7D Hyperbolic Core & AGI system",
+    "description": "CBM-Q: Living AI Quantum Holographic Crystals â€” 7D Hyperbolic Core & AGI system",
     "type": "module",
     "main": "src/index.js",
     "scripts": {
@@ -27,3 +27,5 @@
         "node-fetch": "^3.3.2"
     }
 }
+
+

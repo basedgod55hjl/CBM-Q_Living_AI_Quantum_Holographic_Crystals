@@ -1,4 +1,4 @@
-# ==============================================================================
+﻿# ==============================================================================
 # CBM-Q: Living AI Quantum Holographic Crystals
 # Discovered & Engineered by: Sir Charles Spikes
 # GitHub: https://github.com/basedgod55hjl
@@ -148,3 +148,5 @@ function clear!(mem::HolographicMemory)
 end
 
 end # module
+
+

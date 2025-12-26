@@ -66,3 +66,5 @@ println("\n" * "=" ^ 60)
 println("âœ… CBM-Q: Living AI Quantum Holographic Crystals - IDE Ready!")
 println("=" ^ 60)
 println("\nOpen the HTML file in a browser to launch the IDE.")
+
+

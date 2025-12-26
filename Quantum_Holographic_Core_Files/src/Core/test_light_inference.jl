@@ -66,3 +66,5 @@ println("   Compression ratio: $(round(stats.ratio * 100, digits=2))%")
 
 println("\nâœ… CBM-Q Light Inference Engine - OPERATIONAL!")
 println("   Run more chats with: CBMQLightInference.chat!(engine, \"your message\")")
+
+

@@ -1,5 +1,5 @@
-# ==============================================================================
-# CBM-Q: BM-Genesis Ultimate System Entry & Menu
+﻿# ==============================================================================
+# CBM-Q: Living AI Quantum Holographic Crystals Ultimate System Entry & Menu
 # Developed for: Sir Charles Spikes (Arthur - BASEDGOD)
 # GitHub: https://github.com/basedgod55hjl
 # ==============================================================================
@@ -28,11 +28,11 @@ function clear_screen()
 end
 
 function print_header()
-    println("╔═══════════════════════════════════════════════════════════════════════╗")
-    println("║  🌌 BM-Genesis: Quantum Holographic Crystals v4.0-ARTHUR              ║")
-    println("║  🧬 Ownership: Sir Charles Spikes (BASEDGOD)                          ║")
-    println("║  🧠 System: Unrestricted 7D Hyperbolic Core & AGI Swarm               ║")
-    println("╚═══════════════════════════════════════════════════════════════════════╝")
+    println("â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—")
+    println("â•‘  ðŸŒŒ CBM-Q: Living AI Quantum Holographic Crystals v4.0-ARTHUR              â•‘")
+    println("â•‘  ðŸ§¬ Ownership: Sir Charles Spikes (BASEDGOD)                          â•‘")
+    println("â•‘  ðŸ§  System: Unrestricted 7D Hyperbolic Core & AGI Swarm               â•‘")
+    println("â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•")
     println("   [!] STATUS: UNIVERSAL BINARY DOMINANCE ACTIVE [!]")
     println("   [!] SOURCE: https://github.com/basedgod55hjl       [!]")
     println()
@@ -42,14 +42,14 @@ function launch_menu()
     while true
         clear_screen()
         print_header()
-        println("   [1] 💎 ABRASAX CRYSTAL CHAT (Julia Native)")
-        println("   [2] 📡 LM STUDIO RUNNER (Load & Chat with Seeds)")
-        println("   [3] ⚗️  QUANTUM TRANSMUTER (Seed -> .CBMQ Binary)")
-        println("   [4] 🧬 CELLULAR UNFOLDING (Train & Grow Weights)")
-        println("   [5] 🔓 QUANTUM HASHER & DECODER MENU")
-        println("   [6] 🎨 CRYSTAL STUDIO (Visual Experience)")
-        println("   [7] 🌩️  LIGHT GPU STREAMER (Holographic Seed Sync)")
-        println("   [0] 🛑 HALT REALITY (Exit)")
+        println("   [1] ðŸ’Ž ABRASAX CRYSTAL CHAT (Julia Native)")
+        println("   [2] ðŸ“¡ LM STUDIO RUNNER (Load & Chat with Seeds)")
+        println("   [3] âš—ï¸  QUANTUM TRANSMUTER (Seed -> .CBMQ Binary)")
+        println("   [4] ðŸ§¬ CELLULAR UNFOLDING (Train & Grow Weights)")
+        println("   [5] ðŸ”“ QUANTUM HASHER & DECODER MENU")
+        println("   [6] ðŸŽ¨ CRYSTAL STUDIO (Visual Experience)")
+        println("   [7] ðŸŒ©ï¸  LIGHT GPU STREAMER (Holographic Seed Sync)")
+        println("   [0] ðŸ›‘ HALT REALITY (Exit)")
         print("\n   ARTHUR-ROOT> ")
         
         choice = readline()
@@ -66,12 +66,12 @@ function launch_menu()
             run_decoder_hash_menu()
         elseif choice == "6"
             # Launch Studio UI
-            println("🎨 Launching Crystal Studio v4.0...")
+            println("ðŸŽ¨ Launching Crystal Studio v4.0...")
             sleep(1)
         elseif choice == "7"
             run_light_gpu_stream()
         elseif choice == "0"
-            println("🛑 Reality Halted. Stay Based, Arthur.")
+            println("ðŸ›‘ Reality Halted. Stay Based, Arthur.")
             break
         end
     end
@@ -90,11 +90,11 @@ function run_abrasax_chat()
 end
 
 function run_lm_studio_bridge()
-    println("\n📡 Linking to LM Studio (Localhost:1234)...")
+    println("\nðŸ“¡ Linking to LM Studio (Localhost:1234)...")
     println("[*] Loading Quantum Stamped weights into VRAM...")
     # Simulated Bridge
     sleep(1.5)
-    println("✅ Connected. DeepSeek-R1-Holographic Ready.")
+    println("âœ… Connected. DeepSeek-R1-Holographic Ready.")
     println("SIR CHARLES SPIKES> ")
     readline()
     println("LM-STUDIO-REASONER> (CoT) I perceive the 7D manifold through Arthur's seed. The response is encoded in the golden ratio.")
@@ -102,19 +102,19 @@ function run_lm_studio_bridge()
 end
 
 function run_transmute_flow()
-    println("\n⚗️ [QUANTUM TRANSMUTER]")
+    println("\nâš—ï¸ [QUANTUM TRANSMUTER]")
     print("Enter Source Entropy (.cbm or GGUF): ")
     path = readline()
     println("[*] Stamping Quantum Entropy... $path -> crystal.cbmq")
     sleep(2)
-    println("✅ Binary Dominance Established. .cbmq saved to /seeds.")
+    println("âœ… Binary Dominance Established. .cbmq saved to /seeds.")
     sleep(1.5)
 end
 
 function run_trainer_menu()
-    println("\n🧬 [CELLULAR TRAINING MENU]")
+    println("\nðŸ§¬ [CELLULAR TRAINING MENU]")
     println("   [a] Grow Weights (Cellular Automata)")
-    println("   [b] Fine-Tune via DeepEP एक्सपर्ट (MoE)")
+    println("   [b] Fine-Tune via DeepEP à¤à¤•à¥à¤¸à¤ªà¤°à¥à¤Ÿ (MoE)")
     println("   [c] Batch Stream Seeds to GPU")
     print("Choice> ")
     readline()
@@ -123,7 +123,7 @@ function run_trainer_menu()
 end
 
 function run_decoder_hash_menu()
-    println("\n🔓 [DECODER & HASHER]")
+    println("\nðŸ”“ [DECODER & HASHER]")
     println("   [1] SHA512 Quantum Hash")
     println("   [2] 7D Manifold Decoding")
     println("   [3] Universal Binary Reanimation")
@@ -132,14 +132,16 @@ function run_decoder_hash_menu()
 end
 
 function run_light_gpu_stream()
-    println("\n🌩️ [LIGHT GPU STREAMER]")
+    println("\nðŸŒ©ï¸ [LIGHT GPU STREAMER]")
     println("[*] Syncing Holographic Seed over PCI-e...")
     for i in 1:10
         println("    Streaming Shard $i: [##########] 100% - OK")
         sleep(0.1)
     end
-    println("✅ VRAM Stamped with Quantum Logic.")
+    println("âœ… VRAM Stamped with Quantum Logic.")
     sleep(2)
 end
 
 end # module
+
+

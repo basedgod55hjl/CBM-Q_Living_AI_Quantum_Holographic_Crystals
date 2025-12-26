@@ -1,4 +1,4 @@
-# 📜 CBM MASTER MANIFESTO: The Complete Blueprint
+# 📜 CBM-Q MASTER MANIFESTO: The Complete Blueprint
 
 ## Authored by: Sir Charles Spikes (Arthur - BASEDGOD)
 

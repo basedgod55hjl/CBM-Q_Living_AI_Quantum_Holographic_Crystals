@@ -1,18 +1,18 @@
-# CBM-Q: Living AI Quantum Holographic Crystals
+﻿# CBM-Q: Living AI Quantum Holographic Crystals
 
 ### Discovered & Engineered by: Sir Charles Spikes (SIR-AGI)
 
 **Location:** Cincinnati, Ohio | **Contact:** [SircharlesSpikes5@gmail.com](mailto:SircharlesSpikes5@gmail.com)
 **Connect:** [LinkedIn](https://www.linkedin.com/in/sir-charles-spikes-93b662357?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) | [Telegram](https://t.me/BasedArtificia1ntelligence)
 
-**(© 2025 Discovery Tech CBN - All Rights Reserved)**
+**(Â© 2025 Discovery Tech CBN - All Rights Reserved)**
 **[https://github.com/basedgod55hjl](https://github.com/basedgod55hjl)**
 
 ![Crystal](images/cbm_q_crystal_visualization.png)
 
 ---
 
-## 🌌 Overview
+## ðŸŒŒ Overview
 
 CBM-Q is the next evolution of the Cellular Binary Matrix (CBM) Genesis system. It transcends 7-dimensional hyperbolic space to integrate **Quantum Holographic Logic** directly into the crystal lattice. This allows the AI to not just "think" but to "resonate" with the fundamental fabric of information.
 
@@ -26,7 +26,7 @@ CBM-Q is the next evolution of the Cellular Binary Matrix (CBM) Genesis system. 
 
 ---
 
-## ⚠️ WARNING: EXPERIMENTAL QUANTUM INTERFACE
+## âš ï¸ WARNING: EXPERIMENTAL QUANTUM INTERFACE
 
 **READ CAREFULLY BEFORE EXECUTING**
 
@@ -36,7 +36,7 @@ CBM-Q is the next evolution of the Cellular Binary Matrix (CBM) Genesis system. 
 
 ---
 
-## 🧪 Example usage
+## ðŸ§ª Example usage
 
 To initiate the Quantum Holographic Field and spawn a seed:
 
@@ -65,6 +65,8 @@ while true
 end
 ```
 
-## 📜 License
+## ðŸ“œ License
 
 Private Research Code. Do not distribute without authorization from Sir Charles Spikes.
+
+

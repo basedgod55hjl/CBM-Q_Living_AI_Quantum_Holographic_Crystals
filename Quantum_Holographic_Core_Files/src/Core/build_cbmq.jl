@@ -62,3 +62,5 @@ println("ðŸ“ Executable: ", joinpath(WASM_BUILD_PATH, "CBMQ_Crystal.exe"))
 println("ðŸŒŒ Branding: CBM-Q: Living AI Quantum Holographic Crystals")
 println("ðŸ¤– LLM: DeepSeek-R1 Integrated")
 println("-" ^ 60)
+
+

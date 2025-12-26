@@ -69,3 +69,5 @@ println("   Vocab cached: $(length(engine.memory.vocab_embeddings)) tokens")
 println("\nâœ… CBM-Q FULL SYSTEM OPERATIONAL!")
 println("   The system maintains conversation context via holographic superposition,")
 println("   enabling unlimited context in constant O(d) memory.")
+
+

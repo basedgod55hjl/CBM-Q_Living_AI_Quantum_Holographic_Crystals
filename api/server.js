@@ -1,4 +1,4 @@
-import { QuantumBridge } from './bridge.js';
+﻿import { QuantumBridge } from './bridge.js';
 import express from 'express';
 import dotenv from 'dotenv';
 
@@ -13,7 +13,7 @@ app.use(express.json());
 app.get('/status', (req, res) => {
     res.json({
         status: 'online',
-        system: 'CBM-Genesis Quantum Holographic Crystal',
+        system: 'CBM-Q: Living AI Quantum Holographic Crystals Quantum Holographic Crystal',
         version: '1.0.0',
         core: '7D Hyperbolic Neural Core'
     });
@@ -30,8 +30,11 @@ app.post('/simulate', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`
-  🌐 CBM-Genesis API Gateway Active
-  📍 Endpoint: http://localhost:${port}
-  💎 Quantum Bridge: Connected
+  ðŸŒ CBM-Q: Living AI Quantum Holographic Crystals API Gateway Active
+  ðŸ“ Endpoint: http://localhost:${port}
+  ðŸ’Ž Quantum Bridge: Connected
   `);
 });
+
+
+
