@@ -1,7 +1,26 @@
-name = "CBM"
-uuid = "77777777-7777-7777-7777-777777777777"
-authors = ["Sir Charles Spikes <BASEDGOD>"]
-version = "2.0.0"
+# CBM-Q Julia Dependencies
+# Auto-generated for Sir Charles Spikes' Quantum Holographic Core
 
 [deps]
-# Intentionally minimal to force stdlib fallback
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+SHA = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+UUIDs = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+Mmap = "a63ad114-7e13-5084-954f-fe012c677804"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+
+[compat]
+julia = "1.9"
+HTTP = "1.10"
+JSON = "0.21"
+FFTW = "1.8"
+Plots = "1.40"
+ProgressMeter = "1.10"
