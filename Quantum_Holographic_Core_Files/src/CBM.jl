@@ -16,6 +16,7 @@ try using UUIDs catch end
 try using Dates catch end
 try using Libdl catch end
 try using Mmap catch end
+try using SHA catch end
 
 # 1. CORE LOGIC (DEEP ROOTS)
 include("Core/Hyperbolic7D.jl")
@@ -38,6 +39,8 @@ include("System_Interfaces/CBMQServer.jl")
 include("System_Interfaces/CBMQBrowser.jl")
 include("System_Interfaces/CBMQReasoner.jl")
 include("System_Interfaces/CBMQScanner.jl")
+include("System_Interfaces/AbrasaxCore.jl")
+include("System_Interfaces/GenesisRunner.jl")
 
 # 4. EXPORTS & INITIALIZATION
 using .Hyperbolic7D
@@ -52,6 +55,8 @@ using .CBMQDecoder
 using .CBMQFineTuner
 using .CBMQHolographicCore
 using .CBMStudioFull
+using .AbrasaxCore
+using .GenesisRunner
 
 function welcome()
     println("╔═══════════════════════════════════════════════════════════════════════╗")
@@ -59,10 +64,18 @@ function welcome()
     println("║  🧬 Ownership: Sir Charles Spikes (BASEDGOD)                          ║")
     println("║  🧠 System: 7D Deep-Sorted Hyperbolic Neural Core Active              ║")
     println("╚═══════════════════════════════════════════════════════════════════════╝")
-    println("   Author: Arthur (BASEDGOD)")
+    println("   Author: Sir Charles Spikes / Arthur (BASEDGOD)")
     println("   GitHub: https://github.com/basedgod55hjl")
+    println()
+    println("   Status: Core Rebuild 100% Complete.")
+    println("   Modules: Abrasax, GenesisRunner, LM-Studio-Bridge ACTIVE.")
 end
 
-export welcome
+export welcome, launch_system
+
+function launch_system()
+    welcome()
+    GenesisRunner.launch_menu()
+end
 
 end # module
