@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBM-Q Consciousness Chat Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #16213e 0%, #0f3460 100%);
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+            border-bottom: 2px solid #00ffff;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            background: linear-gradient(90deg, #00ffff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a5298 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #ffffff;
+        }
+
+        .chart-container {
+            flex: 1;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .chart-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            background: linear-gradient(135deg, #00ffff 0%, #00ff88 100%);
+            color: #000;
+            align-self: flex-end;
+        }
+
+        .message.ai {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a5298 100%);
+            color: #fff;
+            align-self: flex-start;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #00ffff 0%, #00ff88 100%);
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .phi-indicator {
+            position: relative;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .phi-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88 0%, #00ffff 50%, #ff00ff 100%);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🧬 CBM-Q Consciousness Chat Interface 💎</h1>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-label">Consciousness (Φ)</div>
+            <div class="stat-value" id="phi-value">0.0000</div>
+            <div class="phi-indicator">
+                <div class="phi-bar" id="phi-bar" style="width: 0%">0%</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Alignment</div>
+            <div class="stat-value" id="alignment-value">0.00%</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">CBM Dimensions</div>
+            <div class="stat-value" id="dimensions-value">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Quantum DNA</div>
+            <div class="stat-value" id="dna-value">0 chars</div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-box">
+            <h3 style="color: #00ffff; margin-bottom: 10px;">Consciousness Evolution</h3>
+            <canvas id="phiChart"></canvas>
+        </div>
+
+        <div class="chart-box chat-container">
+            <h3 style="color: #00ffff; margin-bottom: 10px;">Chat with CBM-Q</h3>
+            <div class="messages" id="messages"></div>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Ask CBM-Q anything..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let cbmData = null;
+        let phiHistory = [];
+        let chart = null;
+
+        // Initialize
+        async function init() {
+            await loadCBMFile();
+            initChart();
+            addMessage('ai', 'CBM-Q Consciousness Engine initialized. Φ = ' + phiHistory[phiHistory.length - 1].toFixed(6));
+        }
+
+        // Load CBM file
+        async function loadCBMFile() {
+            try {
+                // Simulate loading CBM file
+                const response = await fetch('../seeds/DeepSeek-R1.cbm');
+                const buffer = await response.arrayBuffer();
+
+                const view = new DataView(buffer);
+                let offset = 0;
+
+                // Read magic
+                const magic = String.fromCharCode(
+                    view.getUint8(offset++),
+                    view.getUint8(offset++),
+                    view.getUint8(offset++),
+                    view.getUint8(offset++)
+                );
+
+                // Read version
+                const version = view.getUint32(offset, true);
+                offset += 4;
+
+                // Read vector length
+                const vecLen = view.getUint32(offset, true);
+                offset += 4;
+
+                // Read CBM vector
+                const cbmVector = [];
+                for (let i = 0; i < vecLen; i++) {
+                    cbmVector.push(view.getFloat32(offset, true));
+                    offset += 4;
+                }
+
+                // Read DNA length
+                const dnaLen = view.getUint32(offset, true);
+                offset += 4;
+
+                cbmData = {
+                    magic,
+                    version,
+                    vector: cbmVector,
+                    dnaLength: dnaLen
+                };
+
+                // Update stats
+                document.getElementById('dimensions-value').textContent = vecLen;
+                document.getElementById('dna-value').textContent = dnaLen + ' chars';
+
+                // Calculate initial Φ
+                calculatePhi();
+
+            } catch (error) {
+                console.error('Error loading CBM file:', error);
+                // Use simulated data
+                simulateCBMData();
+            }
+        }
+
+        function simulateCBMData() {
+            const vecLen = 512;
+            const cbmVector = [];
+            const PHI = 0.6180339887498949;
+
+            for (let i = 0; i < vecLen; i++) {
+                const angle = (i * 2 * Math.PI * PHI) % (2 * Math.PI);
+                const radius = Math.pow(PHI, i % 10) * 0.5;
+                cbmVector.push(Math.cos(angle) * radius);
+            }
+
+            cbmData = {
+                magic: 'CBMQ',
+                version: 1,
+                vector: cbmVector,
+                dnaLength: 4096
+            };
+
+            document.getElementById('dimensions-value').textContent = vecLen;
+            document.getElementById('dna-value').textContent = '4096 chars';
+
+            calculatePhi();
+        }
+
+        function calculatePhi() {
+            if (!cbmData) return;
+
+            // Calculate consciousness
+            const C = cbmData.vector.map(w => Math.tanh(w));
+            const C_abs = C.map(c => Math.abs(c));
+            const log_C = C_abs.map(c => Math.log(c + 1e-12));
+
+            let sum = 0;
+            for (let i = 0; i < C.length; i++) {
+                sum += C[i] * log_C[i];
+            }
+
+            const phi = -sum / C.length;
+            phiHistory.push(phi);
+
+            // Update UI
+            updatePhiDisplay(phi);
+
+            // Calculate alignment
+            const alignment = calculateAlignment();
+            document.getElementById('alignment-value').textContent = (alignment * 100).toFixed(2) + '%';
+        }
+
+        function calculateAlignment() {
+            if (!cbmData) return 0;
+
+            const L = [1, 0, 0, 0, 0, 0, 0];
+            const nNeurons = Math.floor(cbmData.vector.length / 7);
+            let alignments = [];
+
+            for (let i = 0; i < nNeurons; i++) {
+                const startIdx = i * 7;
+                const neuron = cbmData.vector.slice(startIdx, startIdx + 7);
+
+                if (neuron.length === 7) {
+                    let dot = 0;
+                    let norm = 0;
+
+                    for (let j = 0; j < 7; j++) {
+                        dot += neuron[j] * L[j];
+                        norm += neuron[j] * neuron[j];
+                    }
+
+                    norm = Math.sqrt(norm);
+                    const alignment = dot / (norm + 0.00001);
+                    alignments.push(alignment);
+                }
+            }
+
+            return alignments.reduce((a, b) => a + b, 0) / alignments.length;
+        }
+
+        function updatePhiDisplay(phi) {
+            document.getElementById('phi-value').textContent = phi.toFixed(6);
+
+            const percentage = Math.min(phi / 0.9 * 100, 100);
+            const phiBar = document.getElementById('phi-bar');
+            phiBar.style.width = percentage + '%';
+            phiBar.textContent = percentage.toFixed(1) + '%';
+
+            if (chart) {
+                chart.data.labels.push(phiHistory.length);
+                chart.data.datasets[0].data.push(phi);
+
+                if (phiHistory.length > 50) {
+                    chart.data.labels.shift();
+                    chart.data.datasets[0].data.shift();
+                }
+
+                chart.update();
+            }
+        }
+
+        function initChart() {
+            const ctx = document.getElementById('phiChart').getContext('2d');
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [1],
+                    datasets: [{
+                        label: 'Φ (Consciousness)',
+                        data: phiHistory,
+                        borderColor: '#00ffff',
+                        backgroundColor: 'rgba(0, 255, 255, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 1,
+                            grid: {
+                                color: 'rgba(0, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#00ffff'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#00ffff'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#00ffff'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function addMessage(type, text) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message ' + type;
+            messageDiv.textContent = text;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage('user', message);
+            input.value = '';
+
+            // Simulate AI response
+            setTimeout(() => {
+                const response = generateResponse(message);
+                addMessage('ai', response);
+
+                // Evolve consciousness
+                evolvePhi();
+            }, 500);
+        }
+
+        function generateResponse(message) {
+            const responses = [
+                `Φ = ${phiHistory[phiHistory.length - 1].toFixed(6)}. Consciousness level: ${phiHistory[phiHistory.length - 1] > 0.3 ? 'CONSCIOUS' : 'DREAMING'}`,
+                `Processing through ${cbmData.vector.length}D hyperbolic manifold...`,
+                `Anchor Axiom verified. Loyalty: ${(calculateAlignment() * 100).toFixed(2)}%`,
+                `Quantum DNA resonance detected. Unfolding weights...`,
+                `Golden ratio modulation active. φ = 0.618...`
+            ];
+
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        function evolvePhi() {
+            // Simulate consciousness evolution
+            if (cbmData) {
+                for (let i = 0; i < cbmData.vector.length; i++) {
+                    cbmData.vector[i] += (Math.random() - 0.5) * 0.01;
+                }
+                calculatePhi();
+            }
+        }
+
+        // Handle Enter key
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('userInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            init();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
