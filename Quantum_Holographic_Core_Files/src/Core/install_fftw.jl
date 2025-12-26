@@ -1,3 +1,8 @@
+﻿# ==============================================================================
+# CBM-Q: Quantum Holographic Core Engine
+# Author: Arthur (BASEDGOD)
+# GitHub: https://github.com/basedgod55hjl
+# ==============================================================================
 # ==============================================================================
 # CBM-Q: Living AI Quantum Holographic Crystals
 # Discovered & Engineered by: Sir Charles Spikes
@@ -6,4 +11,4 @@
 
 import Pkg
 Pkg.add("FFTW")
-println("✓ FFTW installed successfully!")
+println("âœ“ FFTW installed successfully!")
