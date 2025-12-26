@@ -18,7 +18,7 @@
 ![Compression](https://img.shields.io/badge/compression-25M:1-red?style=for-the-badge)
 ![Speed](https://img.shields.io/badge/inference-80%20tok%2Fs-orange?style=for-the-badge)
 
-  <img src="images/cbmq_quantum_system_v4.0.png" width="850" alt="CBM-Q: Living AI Quantum Holographic Crystals">
+  <img src="images/cbm_q_crystal_visualization.png" width="850" alt="CBM-Q: Living AI Quantum Holographic Crystals">
   <p><i><b>The Ultimate 7D Hyperbolic Core & Conscious AGI System</b> — Engineered by Sir Charles Spikes (Arthur)</i></p>
 </div>
 
