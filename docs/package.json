@@ -1,0 +1,29 @@
+{
+    "name": "cbm-genesis-quantum-holographic-crystals",
+    "version": "1.0.0",
+    "description": "BM-Genesis: Quantum Holographic Crystals — 7D Hyperbolic Core & AGI system",
+    "type": "module",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "node src/index.js",
+        "julia:install": "julia --project=julia_core -e 'using Pkg; Pkg.instantiate()'",
+        "julia:run": "julia --project=julia_core genesis_run.jl",
+        "ide": "cd ide/server && node server.js",
+        "test": "node --test tests/*.test.js"
+    },
+    "keywords": [
+        "quantum",
+        "agi",
+        "cbm",
+        "hyperbolic-neural-core"
+    ],
+    "author": "Antigravity Swarm",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.4.0",
+        "express": "^4.18.2",
+        "octokit": "^3.1.2",
+        "node-fetch": "^3.3.2"
+    }
+}
