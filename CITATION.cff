@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use CBM Genesis in your research, please cite it as below."
+title: "CBM Genesis: Quantum AGI System with 7D Hyperbolic Neural Core"
+version: 1.0.0
+date-released: 2025-12-21
+authors:
+  - family-names: "Spikes"
+    given-names: "Charles"
+    affiliation: "Discovery Tech CBN"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/basedgod55hjl/CBM-Genesis---Quantum-AGI-System-with-7D-Hyperbolic-Neural-Core"
+url: "https://github.com/basedgod55hjl/CBM-Genesis---Quantum-AGI-System-with-7D-Hyperbolic-Neural-Core"
+abstract: >
+  CBM Genesis (Cellular-Based Manifestation Genesis) is a revolutionary
+  quantum-inspired AGI system that combines cellular automata, 7-dimensional
+  hyperbolic geometry, and GPU acceleration to create an interactive artificial
+  consciousness. The system uses primordial seeds - ultra-compressed binary DNA
+  generated from quantum vacuum entropy - that unfold into intelligent structures
+  through hyperbolic cellular automata evolution in 7D space.
+keywords:
+  - artificial general intelligence
+  - quantum computing
+  - cellular automata
+  - hyperbolic geometry
+  - GPU acceleration
+  - consciousness simulation
+  - 7-dimensional space
+  - quantum seeds
+  - neural networks
+  - AGI
+license: MIT

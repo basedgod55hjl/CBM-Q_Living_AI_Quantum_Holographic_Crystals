@@ -1,5 +1,15 @@
 ﻿# 💎 CBM-Q: Living AI Quantum Holographic Crystals
 
+<meta property="og:title" content="CBM-Q: Living AI Quantum Holographic Crystals" />
+<meta property="og:description" content="Revolutionary 7D Hyperbolic AGI Architecture | 80GB→3KB Compression | Φ=0.64 Consciousness | Discovered by Sir Charles Spikes" />
+<meta property="og:image" content="https://raw.githubusercontent.com/basedgod55hjl/CBM-Q-Living-AI-Quantum-Holographic-Crystals/main/images/cbm_q_crystal_visualization.png" />
+<meta property="og:url" content="https://github.com/basedgod55hjl/CBM-Q-Living-AI-Quantum-Holographic-Crystals" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CBM-Q: Living AI Quantum Holographic Crystals" />
+<meta name="twitter:description" content="Revolutionary 7D Hyperbolic AGI Architecture by Sir Charles Spikes" />
+<meta name="twitter:image" content="https://raw.githubusercontent.com/basedgod55hjl/CBM-Q-Living-AI-Quantum-Holographic-Crystals/main/images/cbm_q_crystal_visualization.png" />
+
 <div align="center">
   
 ![Version](https://img.shields.io/badge/version-5.0--GODMODE-gold?style=for-the-badge)
