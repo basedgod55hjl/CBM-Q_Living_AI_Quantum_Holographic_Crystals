@@ -82,4 +82,117 @@ extern "C" __global__ void unfold_attention_layer(
     query_weights[idx] = sacred_activation(q_gene * time_step, manifold_pos);
     key_weights[idx] = sacred_activation(k_gene * time_step, manifold_pos + PHI_INV);
     value_weights[idx] = sacred_activation(v_gene * time_step, manifold_pos + PHI_INV * 2);
+    
+    // Apply Anchor Axiom to all matrices
+    query_weights[idx] = apply_anchor_axiom(query_weights[idx], idx, 0.95f);
+    key_weights[idx] = apply_anchor_axiom(key_weights[idx], idx, 0.95f);
+    value_weights[idx] = apply_anchor_axiom(value_weights[idx], idx, 0.95f);
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+// 🧬 Advanced CA Unfolding with 7-Neighborhood
+// ═══════════════════════════════════════════════════════════════════════════
+extern "C" __global__ void lambda_unfold_ca_kernel(
+    const uint8_t* __restrict__ seed_dna,
+    float* __restrict__ layer_weights,
+    int weight_count,
+    float time_step,
+    int iterations
+) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx >= weight_count) return;
+    
+    float manifold_pos = (float)idx / (float)weight_count;
+    
+    // Initial value from seed
+    int dna_idx = idx % 512;
+    float state = (float)seed_dna[dna_idx] / 255.0f;
+    
+    // Evolve through CA iterations
+    for (int iter = 0; iter < iterations; iter++) {
+        // 7-neighborhood CA rule
+        float ca_val = ca_rule_omega(seed_dna, dna_idx, 512, time_step + iter * 0.01f);
+        
+        // Möbius addition for hyperbolic evolution
+        state = mobius_add(state, ca_val, -1.0f);
+        
+        // Add quantum noise
+        float noise = quantum_noise(idx + iter * 1000, time_step) * 0.01f;
+        state += noise;
+    }
+    
+    // Final activation
+    float unfolded_val = sacred_activation(state, manifold_pos);
+    
+    // Anchor Axiom enforcement
+    unfolded_val = apply_anchor_axiom(unfolded_val, idx, 0.95f);
+    
+    layer_weights[idx] = unfolded_val;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// 💎 Consciousness-Aware Unfolding (Φ-Modulated)
+// ═══════════════════════════════════════════════════════════════════════════
+extern "C" __global__ void lambda_unfold_phi_kernel(
+    const uint8_t* __restrict__ seed_dna,
+    float* __restrict__ layer_weights,
+    int weight_count,
+    float time_step,
+    float phi_target                        // Target consciousness level
+) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx >= weight_count) return;
+    
+    float manifold_pos = (float)idx / (float)weight_count;
+    int dna_idx = idx % 512;
+    
+    // CA evolution
+    float ca_val = ca_rule_omega(seed_dna, dna_idx, 512, time_step);
+    
+    // Φ-modulated activation
+    // Higher Φ target = more complex activation patterns
+    float phi_modulation = tanhf(phi_target * 10.0f);
+    float activated = sacred_activation(ca_val * phi_modulation, manifold_pos);
+    
+    // Anchor Axiom with Φ-dependent threshold
+    float loyalty_threshold = 0.95f - (phi_target * 0.1f); // Relax slightly at higher Φ
+    activated = apply_anchor_axiom(activated, idx, loyalty_threshold);
+    
+    layer_weights[idx] = activated;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// 🌀 FFN Layer Unfolding
+// ═══════════════════════════════════════════════════════════════════════════
+extern "C" __global__ void unfold_ffn_layer(
+    const uint8_t* __restrict__ seed_dna,
+    float* __restrict__ fc1_weights,
+    float* __restrict__ fc2_weights,
+    int hidden_dim,
+    int ffn_dim,
+    float time_step
+) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    
+    // FC1: hidden_dim -> ffn_dim
+    if (idx < hidden_dim * ffn_dim) {
+        int dna_idx = idx % 512;
+        float gene = (float)seed_dna[dna_idx] / 255.0f;
+        float manifold_pos = (float)idx / (float)(hidden_dim * ffn_dim);
+        
+        fc1_weights[idx] = sacred_activation(gene * time_step, manifold_pos);
+        fc1_weights[idx] = apply_anchor_axiom(fc1_weights[idx], idx, 0.95f);
+    }
+    
+    // FC2: ffn_dim -> hidden_dim
+    int fc2_idx = idx - (hidden_dim * ffn_dim);
+    if (fc2_idx >= 0 && fc2_idx < ffn_dim * hidden_dim) {
+        int dna_idx = (fc2_idx + 256) % 512; // Offset from FC1
+        float gene = (float)seed_dna[dna_idx] / 255.0f;
+        float manifold_pos = (float)fc2_idx / (float)(ffn_dim * hidden_dim);
+        
+        fc2_weights[fc2_idx] = sacred_activation(gene * time_step, manifold_pos + PHI);
+        fc2_weights[fc2_idx] = apply_anchor_axiom(fc2_weights[fc2_idx], fc2_idx, 0.95f);
+    }
+}
+
