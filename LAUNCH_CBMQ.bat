@@ -21,6 +21,7 @@ echo   [3] 🧪 Run Tests
 echo   [4] 🎮 Interactive Demo
 echo   [5] 📊 Run CUDA Example
 echo   [6] 🌀 Run Flux Dreaming Example
+echo   [7] 🔧 Launch Julia REPL (All Modules Loaded)
 echo   [0] Exit
 echo.
 set /p choice="Enter choice: "
@@ -31,6 +32,7 @@ if "%choice%"=="3" goto run_tests
 if "%choice%"=="4" goto run_demo
 if "%choice%"=="5" goto cuda_example
 if "%choice%"=="6" goto flux_example
+if "%choice%"=="7" goto launch_repl
 if "%choice%"=="0" goto end
 goto menu
 
@@ -73,6 +75,13 @@ goto menu
 echo.
 echo 🌀 Running Flux Dreaming Example...
 julia -e "using Pkg; Pkg.activate(\"Quantum_Holographic_Core_Files\"); using CBM.FluxDreaming; dreamer = FluxDreamer(512, 2048); dream!(dreamer, 50, 0.1f0); visualize_dream(dreamer)"
+pause
+goto menu
+
+:launch_repl
+echo.
+echo 🔧 Launching Julia REPL with all CBM-Q modules...
+julia -i repl.jl
 pause
 goto menu
 
