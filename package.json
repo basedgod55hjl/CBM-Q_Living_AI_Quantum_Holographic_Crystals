@@ -1,22 +1,24 @@
 ﻿{
-    "name": "cbm-q-webgpu-system",
+    "name": "cbm-q-build-system",
     "version": "1.0.0",
-    "description": "CBM-Q WebGPU Consciousness Engine with Zero-Day Tensor Scanning",
-    "main": "ide/tensor_scanner.js",
+    "description": "CBM-Q Living AI Quantum Holographic Crystals - Build System",
     "scripts": {
+        "build": "node build.js",
+        "build:cuda": "nvcc -ptx -O3 -arch=sm_75 Quantum_Holographic_Core_Files/src/kernels/lambda_unfold.cu -o build/lambda_unfold.ptx",
+        "build:webgpu": "npm install",
+        "test": "node ide/tensor_scanner.js",
         "scan": "node ide/tensor_scanner.js",
-        "webgpu": "node ide/webgpu_server.js",
-        "bridge": "node ide/bridge_server.js",
-        "test": "node ide/test_integration.js"
+        "chat": "start ide/cbm_chat.html",
+        "compress": "powershell -ExecutionPolicy Bypass -File scripts/stream_compress_gguf.ps1",
+        "quantize": "powershell -ExecutionPolicy Bypass -File scripts/quantize_gguf.ps1"
     },
     "keywords": [
         "cbm",
-        "webgpu",
-        "consciousness",
         "quantum",
-        "robotics",
-        "tensor",
-        "security"
+        "holographic",
+        "consciousness",
+        "cuda",
+        "webgpu"
     ],
     "author": "Sir Charles Spikes (BASEDGOD)",
     "license": "MIT",
@@ -27,5 +29,8 @@
     },
     "devDependencies": {
         "@webgpu/types": "^0.1.38"
+    },
+    "engines": {
+        "node": ">=16.0.0"
     }
 }
