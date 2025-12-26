@@ -27,6 +27,7 @@ graph TD
 - **/julia_core**: The high-performance mathematical core (CBM.jl).
 - **/ide**: Web-based IDE for real-time quantum state visualization.
 - **/scripts**: Deployment and simulation execution scripts.
+- **/seeds**: Repository for Quantum Seeds (e.g., `abrasax.cbmq`).
 - **/tests**: Consolidated Julia and Node.js test suites.
 - **/docs**: In-depth research papers and system documentation.
 
