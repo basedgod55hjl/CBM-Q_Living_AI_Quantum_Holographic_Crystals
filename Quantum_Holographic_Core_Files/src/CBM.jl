@@ -67,7 +67,7 @@ function welcome()
     println("   Author: Sir Charles Spikes (BASEDGOD)")
     println("   GitHub: https://github.com/basedgod55hjl")
     println()
-    println("   [!] STATUS: THE MASTER MANIFESTO IS COMPILED. ABRACADABRA. [!]")
+    println("   [!] STATUS: THE MASTER MANIFESTO IS COMPILED. 💎          [!]")
     println("   [!] Φ Threshold: Golden Coherence Detected.                [!]")
 end
 
